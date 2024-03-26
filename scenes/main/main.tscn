@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=3 uid="uid://bbf6j6y6qn62h"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_h5gis"]
+[ext_resource type="PackedScene" uid="uid://kwcwxvoisrv5" path="res://scenes/player.tscn" id="2_7gycu"]
+[ext_resource type="PackedScene" uid="uid://c62rqvyx5edug" path="res://scenes/levels/level_1.tscn" id="2_722bq"]
+[ext_resource type="PackedScene" uid="uid://bweqt8nsa8kwk" path="res://scenes/levels/level_2.tscn" id="3_6jeus"]
+[ext_resource type="Texture2D" uid="uid://bgohotnuin065" path="res://sprites/backgrounds/1.png" id="4_tcfui"]
+[ext_resource type="PackedScene" uid="uid://dba7asbvnq5i3" path="res://scenes/levels/level_3.tscn" id="4_xqbwu"]
+[ext_resource type="Texture2D" uid="uid://dupaxsv2cr1ym" path="res://sprites/backgrounds/2.png" id="5_1wwli"]
+[ext_resource type="PackedScene" uid="uid://bq70jdpqpmbt0" path="res://scenes/levels/level_4.tscn" id="5_tunos"]
+[ext_resource type="PackedScene" uid="uid://ddnwu6n7ybc36" path="res://scenes/levels/dynamic_level_1.tscn" id="6_mgdmv"]
+[ext_resource type="Texture2D" uid="uid://b61d5xofe8w2m" path="res://sprites/backgrounds/3fx.png" id="6_wdois"]
+[ext_resource type="Texture2D" uid="uid://eypxpq2bc6wv" path="res://sprites/backgrounds/4.png" id="7_tssok"]
+[ext_resource type="Texture2D" uid="uid://c1mvnnnp2iltf" path="res://sprites/backgrounds/6fx.png" id="8_s6a35"]
+[ext_resource type="Texture2D" uid="uid://ckoidmy4qq70j" path="res://sprites/backgrounds/7.png" id="9_3kujw"]
+[ext_resource type="Texture2D" uid="uid://xan021vvjgfa" path="res://sprites/backgrounds/8fx.png" id="10_43lc2"]
+[ext_resource type="Texture2D" uid="uid://d0ndr80ykjexi" path="res://sprites/backgrounds/9.png" id="11_bub34"]
+[ext_resource type="TileSet" uid="uid://b2xnra0wvkoks" path="res://data/level_1.tres" id="13_wues5"]
+
+[sub_resource type="Environment" id="Environment_xm2fd"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 4.06
+glow_strength = 0.43
+glow_bloom = 1.0
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 0.7
+adjustment_saturation = 1.25
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i22oi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h5gis")
+level_sceen_array = Array[PackedScene]([ExtResource("2_722bq"), ExtResource("3_6jeus"), ExtResource("4_xqbwu"), ExtResource("5_tunos"), ExtResource("6_mgdmv")])
+
+[node name="Player" parent="." instance=ExtResource("2_7gycu")]
+position = Vector2(33, 199)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.29, 0.29)
+transform = Transform2D(0.29, 0, 0, 0.29, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_tcfui")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_1wwli")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_wdois")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("7_tssok")
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("7_tssok")
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource("8_s6a35")
+centered = false
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+texture = ExtResource("9_3kujw")
+centered = false
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+texture = ExtResource("10_43lc2")
+centered = false
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
+texture = ExtResource("11_bub34")
+centered = false
+
+[node name="StartPos" type="TileMap" parent="."]
+position = Vector2(0, 82)
+tile_set = ExtResource("13_wues5")
+format = 2
+layer_0/tile_data = PackedInt32Array(524289, 393216, 24, 589825, 393216, 25, 524290, 458752, 24, 589826, 458752, 25)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xm2fd")
+camera_attributes = SubResource("CameraAttributesPractical_i22oi")

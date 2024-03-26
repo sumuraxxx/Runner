@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqvjjrir6jwo"]
+
+[ext_resource type="Script" path="res://dynamic_level.gd" id="1_ftisp"]
+[ext_resource type="TileSet" uid="uid://b2xnra0wvkoks" path="res://data/level_1.tres" id="2_2nolw"]
+
+[node name="DynamicLevel" type="Node2D" node_paths=PackedStringArray("platform")]
+script = ExtResource("1_ftisp")
+platform = NodePath("MovingPlatform")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(368, 192)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(368, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(0, 192)
+
+[node name="MovingPlatform" type="TileMap" parent="."]
+tile_set = ExtResource("2_2nolw")
+format = 2

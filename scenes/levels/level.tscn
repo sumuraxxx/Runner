@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfsy3c8b7j0m5"]
+
+[ext_resource type="TileSet" uid="uid://b2xnra0wvkoks" path="res://data/level_1.tres" id="1_v10v3"]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_v10v3")
+format = 2
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(368, 192)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(368, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(0, 192)

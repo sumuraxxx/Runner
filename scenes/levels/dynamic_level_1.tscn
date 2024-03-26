@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddnwu6n7ybc36"]
+
+[ext_resource type="PackedScene" uid="uid://dwqvjjrir6jwo" path="res://scenes/levels/dynamic_level.tscn" id="1_2yyma"]
+[ext_resource type="TileSet" uid="uid://b2xnra0wvkoks" path="res://data/level_1.tres" id="2_d484l"]
+
+[node name="DynamicLevel1" node_paths=PackedStringArray("start_pos", "end_pos") instance=ExtResource("1_2yyma")]
+start_pos = NodePath("Marker2D5")
+end_pos = NodePath("Marker2D4")
+direction = -1
+
+[node name="MovingPlatform" parent="." index="3"]
+position = Vector2(32, 128)
+layer_0/tile_data = PackedInt32Array(0, 0, 24, 65536, 0, 25, 1, 65536, 24, 65537, 65536, 25, 2, 131072, 24, 65538, 131072, 25, 3, 196608, 24, 65539, 196608, 25, 4, 262144, 24, 65540, 262144, 25, 5, 327680, 24, 65541, 327680, 25)
+
+[node name="TileMap" type="TileMap" parent="." index="4"]
+tile_set = ExtResource("2_d484l")
+format = 2
+layer_0/tile_data = PackedInt32Array(327689, 393216, 24, 393225, 393216, 25, 327690, 458752, 24, 393226, 458752, 25, 393229, 393216, 23, 393230, 458752, 23, 327693, 393216, 21, 262157, 393216, 21, 327694, 458752, 21, 262158, 458752, 21, 196621, 393216, 18, 196622, 458752, 18)
+
+[node name="Marker2D4" type="Marker2D" parent="." index="5"]
+position = Vector2(32, 128)
+
+[node name="Marker2D5" type="Marker2D" parent="." index="6"]
+position = Vector2(288, 128)
+
+[node name="Camera2D" type="Camera2D" parent="." index="7"]
+position = Vector2(160, 112)
+zoom = Vector2(0.2, 0.2)
